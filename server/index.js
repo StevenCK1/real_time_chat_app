@@ -19,6 +19,11 @@ const io = new Server(server, {
 // Listen for when the client connects via socket.io-client
 io.on("connection", (socket) => {
   console.log(`User connected ${socket.id}`);
+
+  socket.on("join_room", (data) => {
+    const { username, room } = data; // Data sent from client when join_room event emitted
+    socket.join(room); // Join the user to a socket room
+  });
 });
 
 app.get("/", (req, res) => {
