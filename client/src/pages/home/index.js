@@ -12,7 +12,6 @@ const Home = ({ username, setUsername, room, setRoom, socket }) => {
     // Redirect to /chat
     navigate("/chat", { replace: true });
   };
-
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
