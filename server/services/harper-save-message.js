@@ -23,7 +23,7 @@ function harperSaveMessage(message, username, room) {
     url: dbUrl,
     headers: {
       "Content-Type": "application/json",
-      Authorization: dbPw,
+      Authorization: `Basic ${dbPw}`,
     },
     data: data,
   };
