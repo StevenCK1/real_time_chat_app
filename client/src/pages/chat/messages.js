@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Messages = ({ socket }) => {
   const [messagesReceived, setMessagesReceived] = useState([]);
