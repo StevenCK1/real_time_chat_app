@@ -20,6 +20,8 @@ const io = new Server(server, {
   },
 });
 
+const PORT = process.env.PORT || 4000;
+
 const CHAT_BOT = "ChatBot";
 let chatRoom = ""; // E.g. javascript, node,...
 let allUsers = []; // All users in current chat room
@@ -104,4 +106,4 @@ app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
-server.listen(4000, () => "Server is running on port 4000");
+server.listen(PORT, () => "Server is running on port 4000");
