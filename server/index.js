@@ -15,7 +15,8 @@ const server = http.createServer(app);
 // Create an io server and allow for CORS from http://localhost:3000 with GET and POST methods
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin:
+      "http://localhost:3000" || "https://real-time-chat-app-sc.vercel.app",
     methods: ["GET", "POST"],
   },
 });
