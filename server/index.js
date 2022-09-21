@@ -6,6 +6,7 @@ const cors = require("cors");
 const { Server } = require("socket.io");
 const harperSaveMessage = require("./services/harper-save-message");
 const harperGetMessages = require("./services/harper-get-messages");
+const leaveRoom = require("./utils/leave-room");
 
 app.use(cors());
 
@@ -61,6 +62,7 @@ io.on("connection", (socket) => {
         .then((response) => console.log(response))
         .catch((err) => console.log(err));
     });
+
     // Get last 100 messages sent in the chat room
     harperGetMessages(room)
       .then((last100Messages) => {
@@ -68,6 +70,21 @@ io.on("connection", (socket) => {
         socket.emit("last_100_messages", last100Messages);
       })
       .catch((err) => console.log(err));
+
+    socket.on("leave_room", (data) => {
+      const { username, room } = data;
+      socket.leave(room);
+      const __createdtime__ = Date.now();
+      // Remove user from memory
+      allUsers = leaveRoom(socket.id, allUsers);
+      socket.to(room).emit("chatroom_users", allUsers);
+      socket.to(room).emit("receive_message", {
+        username: CHAT_BOT,
+        message: `${username} has left the chat`,
+        __createdtime__,
+      });
+      console.log(`${username} has left the chat`);
+    });
   });
 });
 
