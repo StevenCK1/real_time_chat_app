@@ -15,7 +15,7 @@ const Home = ({ username, setUsername, room, setRoom, socket }) => {
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
-        <h1>{`<>DevRooms</>`}</h1>
+        <h1>{`ChatRooms`}</h1>
         <input
           className={styles.input}
           placeholder="Username..."
@@ -27,10 +27,10 @@ const Home = ({ username, setUsername, room, setRoom, socket }) => {
           onChange={(e) => setRoom(e.target.value)}
         >
           <option>-- Select Room --</option>
-          <option value="javascript">JavaScript</option>
-          <option value="node">Node</option>
-          <option value="express">Express</option>
-          <option value="react">React</option>
+          <option value="sports">Sports</option>
+          <option value="technology">Technology</option>
+          <option value="sustainability">Sustainability</option>
+          <option value="games">Games</option>
         </select>
 
         <button
