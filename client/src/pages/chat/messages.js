@@ -60,7 +60,7 @@ const Messages = ({ socket, username }) => {
       {messagesReceived.map((msg, i) => (
         <div
           className={
-            msg.username === username ? styles.messageReceived : styles.message
+            msg.username === username ? styles.userMessage : styles.message
           }
           key={i}
         >

@@ -43,7 +43,7 @@
   max-width: 600px;
   padding: 12px;
 }
-.messageReceived {
+.userMessage {
   background: var(--main-primary-color);
   border-radius: 6px;
   margin-bottom: 24px;
