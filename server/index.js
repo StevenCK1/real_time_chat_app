@@ -106,7 +106,7 @@ io.on("connection", (socket) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.send("Hello 👋, server is live!");
 });
 
 server.listen(PORT, () => "Server is running on port 4000");
