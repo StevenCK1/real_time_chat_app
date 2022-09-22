@@ -17,6 +17,9 @@
   align-items: center;
   gap: 28px;
 }
+h1 {
+  color: var(--main-font-color);
+}
 .input {
   width: 100%;
   padding: 12px;

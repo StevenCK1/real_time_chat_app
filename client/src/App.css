@@ -1,18 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
 :root {
   --main-bg-color: #c7f9cc;
+  --white-bg: white;
   --main-primary-color: #4ec46e;
   --main-button-color: #22577a;
+  --main-font-color: #1c622e;
 }
 
 html * {
-  font-family: Arial;
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: var(--main-bg-color);
+  background: var(--white-bg);
 }
 ::-webkit-scrollbar {
   width: 20px;
