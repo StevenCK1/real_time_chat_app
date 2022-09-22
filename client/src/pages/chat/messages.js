@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 import { useState, useEffect, useRef } from "react";
 
-const Messages = ({ socket }) => {
+const Messages = ({ socket, username }) => {
   const [messagesReceived, setMessagesReceived] = useState([]);
 
   const messagesColumnRef = useRef(null);
@@ -58,7 +58,12 @@ const Messages = ({ socket }) => {
   return (
     <div className={styles.messagesColumn} ref={messagesColumnRef}>
       {messagesReceived.map((msg, i) => (
-        <div className={styles.message} key={i}>
+        <div
+          className={
+            msg.username === username ? styles.messageReceived : styles.message
+          }
+          key={i}
+        >
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <span className={styles.msgMeta}>{msg.username}</span>
             <span className={styles.msgMeta}>

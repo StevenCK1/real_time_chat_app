@@ -37,7 +37,14 @@
   padding: 10px 10px 10px 40px;
 }
 .message {
-  background: rgb(0, 24, 111);
+  background: var(--main-bg-color);
+  border-radius: 6px;
+  margin-bottom: 24px;
+  max-width: 600px;
+  padding: 12px;
+}
+.messageReceived {
+  background: var(--main-primary-color);
   border-radius: 6px;
   margin-bottom: 24px;
   max-width: 600px;
