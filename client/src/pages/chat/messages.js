@@ -52,7 +52,14 @@ const Messages = ({ socket, username }) => {
   // dd/mm/yyyy, hh:mm:ss
   function formatDateFromTimestamp(timestamp) {
     const date = new Date(timestamp);
-    return date.toLocaleString();
+    return date.toLocaleString("en-GB", {
+      month: "short",
+      day: "2-digit",
+      year: "2-digit",
+      hour12: true,
+      hour: "numeric",
+      minute: "2-digit",
+    });
   }
 
   return (
