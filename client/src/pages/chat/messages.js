@@ -72,7 +72,7 @@ const Messages = ({ socket, username }) => {
           key={i}
         >
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <span className={styles.msgMeta}>{msg.username}</span>
+            <span className={styles.msgMetaUser}>{msg.username}</span>
             <span className={styles.msgMeta}>
               {formatDateFromTimestamp(msg.__createdtime__)}
             </span>

@@ -100,9 +100,16 @@
 .userMessage .msgMeta {
   color: white;
 }
+
+.userMessage .msgMetaUser {
+  color: white;
+}
 .msgMeta {
   color: var(--main-font-color);
   font-size: 0.75rem;
+}
+.msgMetaUser {
+  font-weight: bold;
 }
 .msgText {
   color: var(--main-font-color);
