@@ -1,5 +1,6 @@
 import styles from "./styles.module.css";
 import React, { useState } from "react";
+import sendBtn from "../../assets/icons8-email-send-96.png";
 
 const SendMessage = ({ socket, username, room }) => {
   const [message, setMessage] = useState("");
@@ -21,8 +22,8 @@ const SendMessage = ({ socket, username, room }) => {
         onChange={(e) => setMessage(e.target.value)}
         value={message}
       />
-      <button className="btn btn-primary" onClick={sendMessage}>
-        Send Message
+      <button onClick={sendMessage}>
+        <img src={sendBtn} alt="send-button"></img>
       </button>
     </div>
   );

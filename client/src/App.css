@@ -2,10 +2,12 @@
 
 :root {
   --main-bg-color: #c7f9cc;
-  --white-bg: white;
-  --main-primary-color: #4ec46e;
+  --main-primary-color: #327e46;
   --main-button-color: #22577a;
-  --main-font-color: #1c622e;
+  --main-font-color: black;
+  --secondary-font-color: #bebebe;
+  --chat-bg: #f7f5f5;
+  --msg-bubble: #e6e8e8;
 }
 
 html * {

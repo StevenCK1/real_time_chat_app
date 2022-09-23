@@ -1,5 +1,4 @@
 .chatContainer {
-  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -9,6 +8,7 @@
 /* Room and users component */
 .roomAndUsersColumn {
   border-right: 1px solid #dfdfdf;
+  margin-left: 2rem;
 }
 .roomTitle {
   margin-bottom: 60px;
@@ -32,12 +32,14 @@
 
 /* Messages */
 .messagesColumn {
-  height: 85vh;
+  height: 90vh;
+  width: auto;
   overflow: auto;
   padding: 10px 10px 10px 40px;
+  background: var(--chat-bg);
 }
 .message {
-  background: var(--main-bg-color);
+  background: var(--msg-bubble);
   border-radius: 6px;
   margin-bottom: 24px;
   max-width: 600px;
@@ -50,6 +52,12 @@
   max-width: 600px;
   padding: 12px;
 }
+.userMessage .msgText {
+  color: white;
+}
+.userMessage .msgMeta {
+  color: white;
+}
 .msgMeta {
   color: var(--main-font-color);
   font-size: 0.75rem;
@@ -61,12 +69,29 @@
 /* Message input and button */
 .sendMessageContainer {
   padding: 16px 20px 20px 16px;
+  display: flex;
 }
+.sendMessageContainer button {
+  background: none;
+  border: none;
+}
+.sendMessageContainer button:hover {
+  cursor: pointer;
+}
+.sendMessageContainer button img {
+  height: 30px;
+}
+
 .messageInput {
   padding: 14px;
   margin-right: 16px;
-  width: 60%;
+  width: 80%;
   border-radius: 6px;
-  border: 1px solid var(--main-font-color);
   font-size: 0.9rem;
+  background: var(--chat-bg);
+  border: none;
+}
+
+input:focus {
+  outline: none;
 }
