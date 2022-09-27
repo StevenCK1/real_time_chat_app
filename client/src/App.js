@@ -16,10 +16,8 @@ function App() {
   useEffect(() => {
     const cookieUsername = cookies.get("username");
     const cookieRoom = cookies.get("room");
-    if (cookieUsername !== "") {
+    if (cookieUsername !== "" && cookieRoom !== "") {
       setUsername(cookieUsername);
-    }
-    if (cookieRoom !== "") {
       setRoom(cookieRoom);
     }
   }, []);
