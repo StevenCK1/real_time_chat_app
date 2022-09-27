@@ -13,6 +13,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
 
+  // think the chat components are not re rendering because it's not receiving a socket event (components in useEffect)
   useEffect(() => {
     const cookieUsername = cookies.get("username");
     const cookieRoom = cookies.get("room");
