@@ -4,8 +4,9 @@ import Home from "./pages/home";
 import Chat from "./pages/chat";
 import { useState, useEffect } from "react";
 import io from "socket.io-client";
-import { getCookie } from "./utils/cookies";
+import Cookies from "universal-cookie";
 
+const cookies = new Cookies();
 const socket = io.connect("https://real-time-chat-app-fo0h.onrender.com");
 
 function App() {
@@ -13,13 +14,11 @@ function App() {
   const [room, setRoom] = useState("");
 
   useEffect(() => {
-    const cookieUsername = getCookie("username");
-    const cookieRoom = getCookie("room");
-
+    const cookieUsername = cookies.get("username");
+    const cookieRoom = cookies.get("room");
     if (cookieUsername !== "") {
       setUsername(cookieUsername);
     }
-
     if (cookieRoom !== "") {
       setRoom(cookieRoom);
     }

@@ -8,7 +8,7 @@ const Chat = ({ username, room, socket }) => {
     <div className={styles.chatContainer}>
       <RoomAndUsersColumn socket={socket} username={username} room={room} />
       <div>
-        <MessagesReceived socket={socket} username={username}/>
+        <MessagesReceived socket={socket} username={username} />
         <SendMessage socket={socket} username={username} room={room} />
       </div>
     </div>
