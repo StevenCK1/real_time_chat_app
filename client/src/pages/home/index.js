@@ -1,5 +1,6 @@
 import styles from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
+import { getCookie, setCookie } from "../../utils/cookies";
 
 const Home = ({ username, setUsername, room, setRoom, socket }) => {
   const navigate = useNavigate();
@@ -9,6 +10,12 @@ const Home = ({ username, setUsername, room, setRoom, socket }) => {
     if (room !== "" && username !== "") {
       socket.emit("join_room", { username, room });
     }
+    // save user data in cookie
+    setCookie("username", username);
+    setCookie("room", room);
+    console.log(getCookie("username"));
+    console.log(getCookie("room"));
+
     // Redirect to /chat
     navigate("/chat", { replace: true });
   };
