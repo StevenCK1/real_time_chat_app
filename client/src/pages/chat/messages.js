@@ -49,7 +49,7 @@ const Messages = ({ socket, username }) => {
     );
   }
 
-  // dd/mm/yyyy, hh:mm:ss
+  // dd/mm/yyyy, hh:mm am/pm
   function formatDateFromTimestamp(timestamp) {
     const date = new Date(timestamp);
     return date.toLocaleString("en-GB", {
