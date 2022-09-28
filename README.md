@@ -28,10 +28,11 @@ Learnt:
 - [Socket.IO](https://socket.io/) library (built on top of WebSocket protocol) that enables low-latency, bidirectional and event-based communication between a client and a server. Learnt how to implement on client and server side
 - use CSS modules, allows use of same className in different files
 - learnt about toLocaleString options to format date to UK format
+- used cookies to save loggedIn user and room for data persistence. Also found some interesting security concerns for localStorage vs cookies, read [here](https://stackoverflow.com/questions/3220660/local-storage-vs-cookies)
+- [localStorage vs cookie vs session storage](https://stackoverflow.com/questions/3220660/local-storage-vs-cookies)
 
 To do:
 
-- save to localeStorage for user to persist
 - authentication
 - validation?
 - emoji
