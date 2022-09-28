@@ -29,6 +29,12 @@ const CHAT_BOT = "ChatBot";
 let chatRoom = ""; // E.g. javascript, node,...
 let allUsers = []; // All users in current chat room
 
+function getUniqueListBy(arr, key) {
+  return [...new Map(arr.map((item) => [item[key], item])).values()];
+}
+
+const uniqueAllUsers = getUniqueListBy(allUsers, "id");
+
 // Listen for when the client connects via socket.io-client
 io.on("connection", (socket) => {
   console.log(`User connected ${socket.id}`);
@@ -56,7 +62,7 @@ io.on("connection", (socket) => {
     // Save the new user to the room
     chatRoom = room;
     allUsers.push({ id: socket.id, username, room });
-    chatRoomUsers = allUsers.filter((user) => user.room === room);
+    chatRoomUsers = uniqueAllUsers.filter((user) => user.room === room);
     socket.to(room).emit("chatroom_users", chatRoomUsers);
     socket.emit("chatroom_users", chatRoomUsers);
 
